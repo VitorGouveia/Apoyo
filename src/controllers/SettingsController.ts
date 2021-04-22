@@ -4,9 +4,18 @@ class SettingsController {
   async create(request: Request, response: Response) {
     const settingsService = new SettingsService()
 
-    const settings = await settingsService.create(request.body)
-  
-    return response.json(settings)
+    
+    try {
+      const settings = await settingsService.create(request.body)
+      
+      return response.json(settings)
+
+    } catch (error) {
+      
+      return response.status(400).json({
+        message: error.message
+      })
+    }
   }
 }
 
