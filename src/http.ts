@@ -19,6 +19,9 @@ app.use(cors())
 app.get("/", (request, response) => {
   return response.render("html/client.html")
 })
+app.get("/amin", (request, response) => {
+  return response.render("html/admin.html")
+})
 
 const http = createServer(app) // Criando protocolo http
 const io = new Server(http) // Criando protocolo websocket
