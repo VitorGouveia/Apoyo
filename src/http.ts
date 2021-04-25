@@ -19,7 +19,7 @@ app.use(cors())
 app.get("/", (request, response) => {
   return response.render("html/client.html")
 })
-app.get("/amin", (request, response) => {
+app.get("/admin", (request, response) => {
   return response.render("html/admin.html")
 })
 
