@@ -14,8 +14,6 @@ io.on("connect", (socket) => {
   const messagesService = new MessagesService()
 
   socket.on("client_first_access", async params => {
-    console.log(params)
-
     const socket_id = socket.id
     const { text, email } = params as IParams
     let user_id = null
@@ -54,6 +52,9 @@ io.on("connect", (socket) => {
     const allMessages = await messagesService.listByUser(user_id)
 
     socket.emit("client_list_all_messages", allMessages)
+
+    const allUsers = await connectionsService.findAllWithoutAdmin()
+    io.emit("admin_list_all_users", allUsers)
     return
   })
 
