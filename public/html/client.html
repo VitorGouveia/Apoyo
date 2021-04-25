@@ -102,23 +102,23 @@
     const chat = document.getElementById("chat_help");
 
     async function onLoad() {
-      // const response = await fetch("http://localhost:3333/settings/admin")
-      // const data = await response.json()
+      const response = await fetch("http://localhost:3333/settings/admin")
+      const data = await response.json()
 
-      // const buttonSupport = document.getElementById("btn_support")
+      const buttonSupport = document.getElementById("btn_support")
 
-      // if(!data.chat) {
-      //   buttonSupport.style.display = "none"
-      // }
+      if(!data.chat) {
+        buttonSupport.style.display = "none"
+      }
 
-      fetch("http://localhost:3333/settings/admin").then((result) =>
-        result.json().then((response) => {
-          const buttonSupport = document.getElementById("btn_support");
-          if (!response.chat) {
-            buttonSupport.style.display = "none";
-          }
-        })
-      );
+      // fetch("http://localhost:3333/settings/admin").then((result) =>
+      //   result.json().then((response) => {
+      //     const buttonSupport = document.getElementById("btn_support");
+      //     if (!response.chat) {
+      //       buttonSupport.style.display = "none";
+      //     }
+      //   })
+      // );
     }
 
     function openChat() {

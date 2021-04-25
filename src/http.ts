@@ -1,5 +1,6 @@
 import express from "express"
 import path from "path"
+import cors from "cors"
 
 import { createServer } from "http"
 import { Server, Socket } from "socket.io"
@@ -13,6 +14,7 @@ app.use(express.static(path.join(__dirname, "..", "public")))
 app.set("views", path.join(__dirname, "..", "public"))
 app.engine("html", require("ejs").renderFile)
 app.set("view engine", "html")
+app.use(cors())
 
 app.get("/", (request, response) => {
   return response.render("html/client.html")
