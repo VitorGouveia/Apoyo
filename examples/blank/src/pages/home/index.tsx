@@ -145,7 +145,6 @@ const Home: React.FC = () => {
         <HelpModal
           style={{
             height: `calc(${menuHeight || 600}px)`,
-            overflowY: "hidden",
           }}
           className="dropdown"
           ref={helpModalRef}
@@ -160,119 +159,110 @@ const Home: React.FC = () => {
                   unmountOnExit
                   onEnter={calcHeight}
                 >
-                  <motion.div
-                  // ref={helpModalContent}
-                  // initial="hidden"
-                  // animate={open ? "visible" : "hide"}
-                  // variants={parentAnimation}
-                  // className={styles.container}
-                  >
-                    <DropdownItem
-                      leftIcon={"cgo"}
-                      rightIcon={"chevron"}
-                      goToMenu="settings"
+                  <div>
+                    <motion.div
+                      className={styles.container}
+                      ref={helpModalContent}
+                      initial={"hidden"}
+                      animate={open ? "visible" : "hide"}
+                      variants={parentAnimation}
                     >
-                      Settings
-                    </DropdownItem>
-                    <motion.div className={styles.headingContainer}>
-                      <div>
-                        <img src="/rocketseat.svg" alt="Rocketseat Logo" />
-                      </div>
-                      <motion.h1 variants={itemAnimation}>
-                        Olá, tudo bem?
-                      </motion.h1>
-                      <motion.p variants={itemAnimation}>
-                        Conta pra gente sua dúvida. Como podemos te ajudar?
-                        Lembrando que para dar continuidade ao seu atendimento,
-                        poderemos solicitar alguns dados pessoais.
-                      </motion.p>
-                    </motion.div>
-
-                    <motion.div className={styles.card}>
-                      <motion.strong variants={itemAnimation}>
-                        Iniciar uma conversa
-                      </motion.strong>
-
-                      <motion.div variants={itemAnimation}>
-                        <motion.p>
-                          tempo de resposta:{" "}
-                          <motion.strong>alguns minutos</motion.strong>
-                        </motion.p>
-                      </motion.div>
-
-                      <Button>
-                        <FiSend /> Envie uma mensagem
-                      </Button>
-                    </motion.div>
-
-                    <motion.div className={styles.card}>
-                      <motion.strong variants={itemAnimation}>
-                        Como saber tudo sobre o show do justin bieber?
-                      </motion.strong>
-
-                      <motion.div variants={itemAnimation}>
-                        <motion.p>
-                          não se preocupe! todas as informações estão aq
-                        </motion.p>
-                      </motion.div>
-                    </motion.div>
-
-                    <motion.div className={styles.card}>
-                      <motion.strong variants={itemAnimation}>
-                        Como saber tudo sobre o show do justin bieber?
-                      </motion.strong>
-
-                      <motion.div variants={itemAnimation}>
-                        <motion.p>
-                          não se preocupe! todas as informações estão aq
-                        </motion.p>
-                      </motion.div>
-                    </motion.div>
-
-                    <motion.div className={styles.card}>
-                      <motion.strong variants={itemAnimation}>
-                        Como saber tudo sobre o show do justin bieber?
-                      </motion.strong>
-
-                      <motion.div variants={itemAnimation}>
-                        <motion.p>
-                          não se preocupe! todas as informações estão aq
-                        </motion.p>
-                      </motion.div>
-                    </motion.div>
-
-                    <motion.div className={styles.card}>
-                      <motion.strong variants={itemAnimation}>
-                        Como saber tudo sobre o show do justin bieber?
-                      </motion.strong>
-
-                      <motion.div variants={itemAnimation}>
-                        <motion.p>
-                          não se preocupe! todas as informações estão aq
-                        </motion.p>
-                      </motion.div>
-                    </motion.div>
-
-                    <motion.div className={styles.card}>
-                      <motion.h5 variants={itemAnimation}>FAQ</motion.h5>
-
-                      <motion.div
-                        className={styles.linkGroup}
-                        variants={itemAnimation}
+                      <DropdownItem
+                        leftIcon={"cgo"}
+                        rightIcon={"chevron"}
+                        goToMenu="settings"
                       >
-                        <Link to="/inter">
-                          O app Inter é compativel com quais versões do android?
-                        </Link>
-                        <Link to="/">
-                          Qual é o código do Inter e o número para desbloquear o
-                          aplicativo?
-                        </Link>
-                        <Link to="/">
-                          Como solicito o encerramento da minha conta?
-                        </Link>
+                        Settings
+                      </DropdownItem>
+                      <motion.div className={styles.headingContainer}>
+                        <div>
+                          <img src="/rocketseat.svg" alt="Rocketseat Logo" />
+                        </div>
+                        <motion.h1 variants={itemAnimation}>
+                          Olá, tudo bem?
+                        </motion.h1>
+                        <motion.p variants={itemAnimation}>
+                          Conta pra gente sua dúvida. Como podemos te ajudar?
+                          Lembrando que para dar continuidade ao seu
+                          atendimento, poderemos solicitar alguns dados
+                          pessoais.
+                        </motion.p>
+                      </motion.div>
+                      <motion.div className={styles.card}>
+                        <motion.strong variants={itemAnimation}>
+                          Iniciar uma conversa
+                        </motion.strong>
+                        <motion.div variants={itemAnimation}>
+                          <motion.p>
+                            tempo de resposta:{" "}
+                            <motion.strong>alguns minutos</motion.strong>
+                          </motion.p>
+                        </motion.div>
+                        <Button>
+                          <FiSend /> Envie uma mensagem
+                        </Button>
+                      </motion.div>
+                      <motion.div className={styles.card}>
+                        <motion.strong variants={itemAnimation}>
+                          Como saber tudo sobre o show do justin bieber?
+                        </motion.strong>
+                        <motion.div variants={itemAnimation}>
+                          <motion.p>
+                            não se preocupe! todas as informações estão aq
+                          </motion.p>
+                        </motion.div>
+                      </motion.div>
+                      <motion.div className={styles.card}>
+                        <motion.strong variants={itemAnimation}>
+                          Como saber tudo sobre o show do justin bieber?
+                        </motion.strong>
+                        <motion.div variants={itemAnimation}>
+                          <motion.p>
+                            não se preocupe! todas as informações estão aq
+                          </motion.p>
+                        </motion.div>
+                      </motion.div>
+                      <motion.div className={styles.card}>
+                        <motion.strong variants={itemAnimation}>
+                          Como saber tudo sobre o show do justin bieber?
+                        </motion.strong>
+                        <motion.div variants={itemAnimation}>
+                          <motion.p>
+                            não se preocupe! todas as informações estão aq
+                          </motion.p>
+                        </motion.div>
+                      </motion.div>
+                      <motion.div className={styles.card}>
+                        <motion.strong variants={itemAnimation}>
+                          Como saber tudo sobre o show do justin bieber?
+                        </motion.strong>
+                        <motion.div variants={itemAnimation}>
+                          <motion.p>
+                            não se preocupe! todas as informações estão aq
+                          </motion.p>
+                        </motion.div>
+                      </motion.div>
+                      <motion.div className={styles.card}>
+                        <motion.h5 variants={itemAnimation}>FAQ</motion.h5>
+                        <motion.div
+                          className={styles.linkGroup}
+                          variants={itemAnimation}
+                        >
+                          <Link to="/inter">
+                            O app Inter é compativel com quais versões do
+                            android?
+                          </Link>
+                          <Link to="/">
+                            Qual é o código do Inter e o número para desbloquear
+                            o aplicativo?
+                          </Link>
+                          <Link to="/">
+                            Como solicito o encerramento da minha conta?
+                          </Link>
+                        </motion.div>
                       </motion.div>
                     </motion.div>
-                  </motion.div>
+                  </div>
                 </CSSTransition>
 
                 <CSSTransition
@@ -282,20 +272,22 @@ const Home: React.FC = () => {
                   unmountOnExit
                   onEnter={calcHeight}
                 >
-                  <motion.div
-                  // initial="hidden"
-                  // animate={open ? "visible" : "hide"}
-                  // variants={parentAnimation}
-                  // className={styles.container}
-                  >
-                    <DropdownItem
-                      leftIcon={"cgo"}
-                      rightIcon={"chevron"}
-                      goToMenu="main"
+                  <div>
+                    <motion.div
+                      className={styles.container}
+                      initial={"hidden"}
+                      animate={open ? "visible" : "hide"}
+                      variants={parentAnimation}
                     >
-                      Settings
-                    </DropdownItem>
-                  </motion.div>
+                      <DropdownItem
+                        leftIcon={"cgo"}
+                        rightIcon={"chevron"}
+                        goToMenu="main"
+                      >
+                        Settings
+                      </DropdownItem>
+                    </motion.div>
+                  </div>
                 </CSSTransition>
               </>
             )
