@@ -8,12 +8,15 @@
   background: #121214;
   border-radius: 4px;
 
+  height: 600px;
+  max-height: 600px;
+
   right: 30px;
   --floating-button-postion: 30px;
   --floating-button-height: 56px; 
   bottom: calc(var(--floating-button-postion) + var(--floating-button-height) + 10px);
 
-  transition: all 200ms;
+  transition: all 200ms, height var(--speed);
 
   &[aria-hidden="true"] {
     opacity: 0;
@@ -30,8 +33,6 @@
   p {
     font-size: 1.4rem;
   }
-
-  overflow: hidden;
 
   &::before {
     content: "";

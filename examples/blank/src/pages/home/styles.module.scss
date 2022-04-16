@@ -1,12 +1,9 @@
 .container {
-  max-height: 600px;
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
 
   gap: 20px;
-  padding: 25px 30px;
 }
 
 .headingContainer {
