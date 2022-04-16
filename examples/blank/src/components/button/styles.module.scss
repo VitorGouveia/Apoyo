@@ -1,0 +1,55 @@
+.container {
+  color: #eee;
+  background: #7159c1;
+
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+  border-radius: 999px;
+
+  padding: 10px 12px;
+
+  cursor: pointer;
+  transition: background 100ms ease;
+
+  &:hover, &:focus {
+    background: hsl(254, 46%, 65%);
+  }
+}
+
+.floating {
+  position: absolute;
+
+  padding: 12px;
+
+  border-radius: 999px;
+
+  right: 30px;
+  bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: transparent;
+    transition: fill 100ms ease;
+  }
+
+  &:hover, &:focus {
+    svg {
+      fill: #eee;
+    }
+  }
+}
+
+.active {
+  background: hsl(254, 46%, 65%) !important;
+  
+  svg {
+    fill: #eee  !important;
+  }
+}

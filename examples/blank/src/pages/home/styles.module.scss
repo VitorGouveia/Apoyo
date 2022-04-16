@@ -1,0 +1,85 @@
+.container {
+  max-height: 600px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  padding: 25px 30px;
+}
+
+.headingContainer {
+  display: flex;
+  z-Index: -1;
+  flex-direction: column;
+  gap: 20px;
+
+  > div {
+    flex: 1;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  img {
+    height: 28px;
+
+    filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.4));
+  }
+
+  p {
+    font-weight: 200;
+    line-height: 24px;
+  }
+}
+
+.card {
+  width: 100%;
+  border-top: 3px solid #7159c1;
+  background: #29292E;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  border-radius: 4px;
+
+  strong {
+    font-size: 1.4rem;
+  }
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  gap: 8px;
+
+  a {
+    font-size: 1.4rem;
+
+    width: 245px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background-image: linear-gradient(to right, purple, orangered);
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    background-position: left bottom;
+
+    padding: 4px 2px;
+
+    transition: background 300ms;
+    
+    &:hover, &:focus {
+      background-size: 100% 3px;
+    }
+  }
+}

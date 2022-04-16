@@ -1,0 +1,49 @@
+.container {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+
+  position: absolute;
+
+  background: #121214;
+  border-radius: 4px;
+
+  right: 30px;
+  --floating-button-postion: 30px;
+  --floating-button-height: 56px; 
+  bottom: calc(var(--floating-button-postion) + var(--floating-button-height) + 10px);
+
+  transition: all 200ms;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+
+  width: 360px;
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  p {
+    font-size: 1.4rem;
+  }
+
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 50%;
+    background: #7159c1;
+
+    z-index: -1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
